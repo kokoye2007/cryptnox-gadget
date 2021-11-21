@@ -42,8 +42,38 @@ volumes:
         type: 83,0FC63DAF-8483-4772-8E79-3D69D8477DE4
         # XXX: make auto-grow to partition
         size: 1500M
+connections:
+  # cryptnox
+  - plug: M3WW8C4m1SMo3celf9LfeqIiaybskgZO:hardware-observe
+  - plug: M3WW8C4m1SMo3celf9LfeqIiaybskgZO:raw-usb
+
+  # cryptnox-image-config
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:avahi-control
+    slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:avahi-observe
+    slot: dVK2PZeOLKA7vf1WPCap9F8luxTk9Oll:avahi-observe
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:hostname-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:network-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:network-setup-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:time-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:timeserver-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:timezone-control
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:udisks2
+    slot: KTyDAsgNZg4u9UBJ63MHn6q12fmUjOfn:service
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:system-observe
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:hardware-observe
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:mount-observe
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:removable-media
+  - plug: o9RMvMTOqDq2HwMrvIWYbNriGkk9saHm:shutdown
+
+
 defaults:
   system:
     service:
       console-conf:
         disable: true
+
+          #  M3WW8C4m1SMo3celf9LfeqIiaybskgZO:
+          #    service:
+          #        pcscd:
+          #          disable: true
